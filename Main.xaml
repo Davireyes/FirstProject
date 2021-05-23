@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="567.333333333333,466" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="730,1114.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -24,10 +24,19 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Collections.ObjectModel</x:String>
       <x:String>System.Activities.DynamicUpdate</x:String>
-    </sco:Collection>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="32">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -54,15 +63,90 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
-    </sco:Collection>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Print Hello World in the user's screen" sap:VirtualizedContainerService.HintSize="376,150.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Print Hello World in the user's screen" sap:VirtualizedContainerService.HintSize="740,1050" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="Bool_googleLogo" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hello World!&quot;]" />
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="698,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hello World!&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: New tab" sap:VirtualizedContainerService.HintSize="698,859.333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="664,641.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:UiElementExists DisplayName="Element Exists 'IMG'" Exists="[Bool_googleLogo]" sap:VirtualizedContainerService.HintSize="622,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+              <ui:UiElementExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0ece3a85-0416-4ddc-b9a5-4118018855af" InformativeScreenshot="b96b87e49054d069cfdf142c40ec0d50" Selector="&lt;webctrl tag='IMG' /&gt;" TimeoutMS="3000">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:UiElementExists.Target>
+            </ui:UiElementExists>
+            <If Condition="[Bool_googleLogo]" sap:VirtualizedContainerService.HintSize="622,403.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="242,240" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="Type Into Google Search bar" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="Who was the third president of USA?">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.google.com/?gws_rd=ssl" DesignTimeRectangle="605, 392, 731, 51" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='Buscar' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAt8AAAA3CAYAAADUgiYCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAEkSURBVHhe7dYxAQAADMOg+TfducgFKrgBAAAJ+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAAETkGwAAIvINAAAR+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAAETkGwAAIvINAAAR+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAAETkGwAAIvINAAAR+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAAETkGwAAIvINAAAR+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAAETkGwAAIvINAAAR+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAAETkGwAAIvINAAAR+QYAgIh8AwBARL4BACAi3wAAEJFvAACIyDcAACS2B904UThYjw8AAAAAAElFTkSuQmCC" InformativeScreenshot="8750690fcdaedc059da644ff0ab06e21.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Google' /&gt;" SearchSteps="FuzzySelector, Image">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                            <uix:Target DesignTimeRectangle="556, 403, 30, 30" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;svg' tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span&amp;gt;svg' tag='svg' type='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAGcSURBVFhH7ZZNSwMxEIb9/z/B057Wg+3BFlwVK6VK/cBFsQgWERFBEdSDetnT6LvNrGlIspm4Kz3sAzl0m2aeTCazXaMVoRMx6URMokRe397p4/NLfWqGYJHziysa7uzTepJWI0l75bP7h0c1K55aEey+P8iWBGxjfHRCRVGoX8nxikACu+Zg/cE2za5v6On5pRzT05zS3pb2faZ+KccrgsAcZH57p54ugyyMD4+reZCLwSmCmuDFkYU6dkeTaj6yJcUpMswWhYmshIDMsAg2IcUpwouGZIPhrGATUqwiKFIWkaSZjxMFLsUqgmb1FxHcJCnOo0nSzXJRyS3gW9bY0QAu1o2f3YU0Kv04Gy1WtG1eGF3TB0S5+yKTMR3WKQL03rB3MLEGMF8Bklum4xVZ7PS3u7JQfjkrh+0dND3Lo16CXhEAGRSsGdAcqAt9nuuV4KJWhME1RjAUMd8oZAvB+b+JXldSmWCRUBA8RqZxERAj04oIkMq0JgJMGd9talUEsAwK29foWhcByERdt/0XkRA6EZNOxGRFRIi+Ad/sbhmItAbgAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NTypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NTypeInto>
+                  <uix:NKeyboardShortcuts DelayBetweenShortcuts="{x:Null}" ActivateBefore="True" ClickBeforeMode="None" DisplayName="Press Enter" sap:VirtualizedContainerService.HintSize="200,52.6666666666667" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NKeyboardShortcuts>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Sorry,  we didn't found the web page :(&quot;]" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-11, -11, 1942, 1042" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAQeSURBVGhD7ZgJT+JAHEf9SPsFd+OtXHLI7X1+IGPiZo1ZYoyCoHhk5ea/85t22qEdoGWGbDahyQstMfLedCjTLi22xTbn7fLyki4uLjjn5+d0Bs7O6PQUnNLJCTih4+NjztHRER2Cw0M6AAcHtA/292mPUd7b45TKZSqVyvibZjab/WZ/nPkN4oPBYCJ9L30bZ7/vvsf3+zQcDgmDU6lUEDi/CBHQ6/U4XUHXpdPtSrDjDnsF7Lht77fbHb7f4q8dHoGAj48P+v27grMznwhMm8FgODGgqxHw+flJb29vdHd3h6nVTJqOwJyfdgZ0At7f36nZbNLLywv9ur3F96KZTBqMwBd2nlMI8q+vr9RoNKhWq9HNzU8qFIssImkmAlcbBDjiMwVY8hajARj5er1Oz8/PVK1W6fHxka6vrylfKJiJwKXSFyDJT5s+HHv0VQEQx8gL+YeHB7q/v6erqyvK5fNNW2P2Ddd5J2BE3MKVny0gHo+PJZXOkK0x+4YfKR7gEZ8oD+wA7HvnPz9m1NjoP1VrElV6emJnglGvNyiZTusH4NfVH2AJjg1gx86IS6PvDcDxKG1qtdr0xej1+pRMGQ3ojhEH00ffYlIAk/cE7KRS+gFY22BJ4JcWqOU5ELX3IRl09J2AZFI/AAszdYBHHHRdYX7pZGIj8iEDEjsmAtiK0gpgwgIhLCONPI6FvEUweX/Ajn4AlsRYRfqEBfYZGScPwbCjLwLiCRMBbC2vDPCIW/K2pH0cWH5MQCyR0A/AzYj3OyBLA2fUgf1eMHngl3cC4iYC2F0UzoAsLLDOhi0ovQ+xMPJzDcBtoH8KuWKyuFee73NRFeqpIwdEY3H9ANy/Yt3iCAOPtFd8+siD8fIAS/dILGYqQD2FhIxKXEce8ICogQA8PeixM4APhqB49YH3JUaFZabLf321+Op3Oxo1EFAqW1NIJQ2YVDBxYMlPDmjRHxEQMRBQLJX83wEFamEBkw4k3+byImArEjEQUBwfoJb14sqrhEew5UXA5raBAHaD7XwHwhF81DmSvBuwbSCgEDbAFteQdwK2DATkC4WAATOIA4W8CNjY3NIPyOXHBUjCknRgcaAQFyBg3UxA3g6QZD3CoaQ5rYnygAdsbOoHZHMsgK1L9IQlFLIqELBmJiDHA5QyoZg+6jI8YH1DP2A3qxsQTlyAgFUzAdkZA2YTF/CAtXX9gMxumABLWkdcgIAVMwG7EwJcYRPSMjxgdU0/IJ1BQG9E1LSsCgQsmwhIZTL8n6k+ZJ7gM3+srBoISP/nAXjEjX/2L/i+vGIgIJXmT4nxoBXPKvG4D0/M8NAJjz0Anh7gBhz3sLgNxJ0UbkawnseSGKtKLMywtsHyAL+w+JHCdR6XSlxt8IXFnMeoA8gbCVhsi23StrT0Fx+aZnks0HtQAAAAAElFTkSuQmCC" InformativeScreenshot="42c74a2efca547271d6028286c81f0ca.png" Selector="&lt;html app='msedge.exe' url='www.google.com' /&gt;" Url="www.google.com" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
   </Sequence>
 </Activity>
